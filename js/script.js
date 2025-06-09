@@ -10,3 +10,17 @@ let pokemonList = [
   { name: "pikachu", height: 4, types: ["electric"] }
 ];
 
+// Part 1 & 2: Loop through each Pokémon and display name and height
+for (let i = 0; i < pokemonList.length; i++) {
+  let pokemon = pokemonList[i]; // Current Pokémon object
+  let output = pokemon.name + " (height: " + pokemon.height + ")";
+
+  // Part 3: Add "Wow, that's big!" if height > 6
+  if (pokemon.height > 6) {
+    output += " - Wow, that's big!";
+  }
+
+  // Output to the DOM
+  document.write("<p>" + output + "</p>");
+}
+
