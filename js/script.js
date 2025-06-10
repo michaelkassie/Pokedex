@@ -4,7 +4,7 @@ document.write(favoriteFood);*/
 
 //let pokemonList=[];
 
-let pokemonList = [
+/*let pokemonList = [
   { name: "bulbasaur", height: 7, types: ["poison", "grass"] },
   { name: "charmander", height: 6, types: ["fire"] },
   { name: "pikachu", height: 4, types: ["electric"] }
@@ -22,9 +22,48 @@ let pokemonList = [
 
   // Output to the DOM
   document.write("<p>" + output + "</p>");
-}*/
+}
 
 pokemonList.forEach(function(pokemon) {
+  let message = pokemon.name + " (height: " + pokemon.height + ")";
+  if (pokemon.height > 6) {
+    message += " - Wow, that’s big!";
+  }
+  document.write(message + "<br>");
+}); 
+*/
+
+let pokemonRepository = (function () {
+  let pokemonList = [
+    { name: "Bulbasaur", height: 7, types: ["poison", "grass"] },
+    { name: "Charamander", height: 6, types: ["fire"] },
+    { name: "Pikachu", height: 4, types: ["electric"] }
+  ];
+
+  function getAll() {
+    return pokemonList;
+  }
+
+  function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("Invalid Pokémon. Must be an object with name, height, and types.");
+    }
+  }
+
+  return {
+    getAll: getAll,
+    add: add
+  };
+})();
+
+pokemonRepository.getAll().forEach(function(pokemon) {
   let message = pokemon.name + " (height: " + pokemon.height + ")";
   if (pokemon.height > 6) {
     message += " - Wow, that’s big!";
