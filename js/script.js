@@ -11,7 +11,7 @@ let pokemonList = [
 ];
 
 // Part 1 & 2: Loop through each Pokémon and display name and height
-for (let i = 0; i < pokemonList.length; i++) {
+/*for (let i = 0; i < pokemonList.length; i++) {
   let pokemon = pokemonList[i]; // Current Pokémon object
   let output = pokemon.name + " (height: " + pokemon.height + ")";
 
@@ -22,5 +22,14 @@ for (let i = 0; i < pokemonList.length; i++) {
 
   // Output to the DOM
   document.write("<p>" + output + "</p>");
-}
+}*/
+
+pokemonList.forEach(function(pokemon) {
+  let message = pokemon.name + " (height: " + pokemon.height + ")";
+  if (pokemon.height > 6) {
+    message += " - Wow, that’s big!";
+  }
+  document.write(message + "<br>");
+});
+
 
