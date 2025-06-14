@@ -1,43 +1,8 @@
-/*alert("hello world");
-let favoriteFood = "Pizza";
-document.write(favoriteFood);*/
-
-//let pokemonList=[];
-
-/*let pokemonList = [
-  { name: "bulbasaur", height: 7, types: ["poison", "grass"] },
-  { name: "charmander", height: 6, types: ["fire"] },
-  { name: "pikachu", height: 4, types: ["electric"] }
-];
-
-// Part 1 & 2: Loop through each Pokémon and display name and height
-/*for (let i = 0; i < pokemonList.length; i++) {
-  let pokemon = pokemonList[i]; // Current Pokémon object
-  let output = pokemon.name + " (height: " + pokemon.height + ")";
-
-  // Part 3: Add "Wow, that's big!" if height > 6
-  if (pokemon.height > 6) {
-    output += " - Wow, that's big!";
-  }
-
-  // Output to the DOM
-  document.write("<p>" + output + "</p>");
-}
-
-pokemonList.forEach(function(pokemon) {
-  let message = pokemon.name + " (height: " + pokemon.height + ")";
-  if (pokemon.height > 6) {
-    message += " - Wow, that’s big!";
-  }
-  document.write(message + "<br>");
-}); 
-*/
-
 let pokemonRepository = (function () {
   let pokemonList = [
-    { name: "Bulbasaur", height: 7, types: ["poison", "grass"] },
-    { name: "Charamander", height: 6, types: ["fire"] },
-    { name: "Pikachu", height: 4, types: ["electric"] }
+    { name: "Bulbasaur", height: 7, types: ["grass", "poison"] },
+    { name: "Charmander", height: 6, types: ["fire"] },
+    { name: "Squirtle", height: 5, types: ["water"] },
   ];
 
   function getAll() {
@@ -45,30 +10,37 @@ let pokemonRepository = (function () {
   }
 
   function add(pokemon) {
-    if (
-      typeof pokemon === "object" &&
-      "name" in pokemon &&
-      "height" in pokemon &&
-      "types" in pokemon
-    ) {
-      pokemonList.push(pokemon);
-    } else {
-      console.log("Invalid Pokémon. Must be an object with name, height, and types.");
-    }
+    pokemonList.push(pokemon);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
+  function addListItem(pokemon) {
+    let pokemonListElement = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("pokemon-button");
+
+    listItem.appendChild(button);
+    pokemonListElement.appendChild(listItem);
+
+    // Add event listener to log details
+    button.addEventListener("click", function () {
+      showDetails(pokemon);
+    });
   }
 
   return {
+    add: add,
     getAll: getAll,
-    add: add
+    addListItem: addListItem,
   };
 })();
 
-pokemonRepository.getAll().forEach(function(pokemon) {
-  let message = pokemon.name + " (height: " + pokemon.height + ")";
-  if (pokemon.height > 6) {
-    message += " - Wow, that’s big!";
-  }
-  document.write(message + "<br>");
+// Loop through the list and display each Pokémon
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
 });
-
-
