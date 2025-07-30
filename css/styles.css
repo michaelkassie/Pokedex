@@ -1,59 +1,64 @@
+/* Style for Pokémon Buttons */
 .pokemon-button {
   background-color: #3b4cca;
   color: white;
-  padding: 10px;
+  padding: 10px 20px; /* Added more padding to make the button larger */
   border: none;
   border-radius: 6px;
   margin: 5px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 16px; /* Slightly increased font size for better visibility */
+  transition: background-color 0.3s ease; /* Smooth transition for background-color */
 }
 
 .pokemon-button:hover {
-  background-color: #2a34a1;
-}
-.modal-container {
-  display: none;
+  background-color: #2a34a1; /* Darker shade on hover */
 }
 
-.modal-container.is-visible {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  overflow: auto;
-  display: grid;
-  place-items: center;
-}
-
-.modal {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
+/* Layout for Pokémon list (center the list on the page) */
+body {
+  font-family: Arial, sans-serif;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Soft background for the page */
 }
 
-.modal-img {
-  width: 100%;
-  height: auto;
-  margin-top: 10px;
+h1 {
+  color: #3b4cca;
+  font-size: 32px;
+  margin-top: 20px;
 }
 
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
+/* Pokémon list styling */
+.pokemon-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Style for each Pokémon item in the list */
+.pokemon-list li {
+  display: inline-block;
+}
+
+/* Add some space between items */
+.pokemon-list li + li {
+  margin-left: 10px;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  .pokemon-list {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .pokemon-button {
+    width: 100%; /* Make buttons take up full width on small screens */
+  }
 }
