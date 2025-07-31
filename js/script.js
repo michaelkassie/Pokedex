@@ -49,15 +49,19 @@ let pokemonRepository = (function () {
   }
 
   // Function to show Pokémon details in the console (instead of a modal)
-  function showDetails(pokemon) {
-    loadDetails(pokemon).then(() => {
-      // Log Pokémon details to the console
-      console.log(`Name: ${pokemon.name}`);
-      console.log(`Height: ${pokemon.height}`);
-      console.log(`Types: ${pokemon.types.join(', ')}`);
-      console.log(`Image URL: ${pokemon.imgUrl}`);
-    });
-  }
+  // Function to show Pokémon details in the console (instead of a modal)
+function showDetails(pokemon) {
+  loadDetails(pokemon).then(() => {
+    // Log the entire Pokémon object to the console
+    console.log(pokemon);
+    
+    // Log Pokémon details to the console
+    console.log(`Name: ${pokemon.name}`);
+    console.log(`Height: ${pokemon.height}`);
+    console.log(`Types: ${pokemon.types.join(', ')}`);
+    console.log(`Image URL: ${pokemon.imgUrl}`);
+  });
+}
 
   // Expose public methods
   return {
