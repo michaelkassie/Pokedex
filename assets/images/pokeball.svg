@@ -1,0 +1,23 @@
+<!-- assets/images/pokeball.svg -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  width="64"
+  height="64"
+>
+  <!-- Outer circle -->
+  <circle cx="256" cy="256" r="248" fill="#ffffff" stroke="#000" stroke-width="16"/>
+  
+  <!-- Top red half -->
+  <path d="M256 8a248 248 0 0 1 248 248H8A248 248 0 0 1 256 8z"
+        fill="#e53935" stroke="#000" stroke-width="16"/>
+  
+  <!-- Center black band -->
+  <rect x="8" y="232" width="496" height="48" fill="#000"/>
+  
+  <!-- Outer button ring -->
+  <circle cx="256" cy="256" r="64" fill="#fff" stroke="#000" stroke-width="16"/>
+  
+  <!-- Inner button -->
+  <circle cx="256" cy="256" r="28" fill="#000"/>
+</svg>
