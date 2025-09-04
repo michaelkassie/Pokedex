@@ -4,7 +4,7 @@ Title: Pokédex (Cartoon Grid)
 
 A lightweight, cartoon-styled Pokédex built with HTML, CSS, and JavaScript plus Bootstrap 5.Features a square card grid, details modal, search, optional cry sounds, and a clean ESLint + Prettier setup.Deployed on GitHub Pages with minified assets in the dist/ folder.
 
-Live: https://.github.io/Repo: [https://github.com/](https://github.com/)/
+Live: https://michaelkassie.github.io/Pokedex/
 
 FEATURES
 --------
@@ -201,4 +201,5 @@ ROADMAP
     
 *   Pagination or infinite scroll
     
+
 
