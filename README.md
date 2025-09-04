@@ -1,6 +1,6 @@
-Here’s an updated README in plain text that explicitly covers deploying through GitHub Pages (step-by-step). Paste this into README.md.
 
-Title: Pokédex (Cartoon Grid)
+Pokédex
+=======
 
 A lightweight, cartoon-styled Pokédex built with HTML, CSS, and JavaScript plus Bootstrap 5.Features a square card grid, details modal, search, optional cry sounds, and a clean ESLint + Prettier setup.Deployed on GitHub Pages with minified assets in the dist/ folder.
 
@@ -40,9 +40,6 @@ Add images to a screenshots/ folder and reference them here:
 
 PROJECT STRUCTURE
 -----------------
-
-Project structure — explained (bullet format)
-=============================================
 
 *   **index.html**
     
@@ -203,6 +200,7 @@ ROADMAP
     
 *   Pagination or infinite scroll
     
+
 
 
 
