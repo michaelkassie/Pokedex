@@ -31,10 +31,12 @@ SCREENSHOTS
 
 Add images to a screenshots/ folder and reference them here:
 
-*   Grid: screenshots/grid.png
-    
-*   Modal: screenshots/modal.png
-    
+* Grid: 
+   ![Grid](./screenshots/grid.png)
+
+* Modal: 
+   ![Modal](./screenshots/modal.png)
+
 
 PROJECT STRUCTURE
 -----------------
@@ -201,5 +203,6 @@ ROADMAP
     
 *   Pagination or infinite scroll
     
+
 
 
