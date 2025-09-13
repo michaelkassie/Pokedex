@@ -87,7 +87,7 @@ const pokemonRepository = (function () {
 
 
 // Elements
-const gridEl = document.getElementById('pokemonGrid'); // <div id="pokemonGrid">
+const gridEl = document.getElementById('pokemonGrid'); 
 const searchInput = document.getElementById('search');
 
 // Sound toggle
@@ -168,9 +168,7 @@ function confettiBurst(x, y, count = 18) {
   })();
 }
 
-/* ===========================
-   Grid rendering
-   =========================== */
+
 
 function clearGrid() {
   if (gridEl) gridEl.innerHTML = '';
@@ -241,7 +239,7 @@ if (catchBtn) {
     const r = catchBtn.getBoundingClientRect();
     confettiBurst(r.left + r.width / 2, r.top);
     play(SFX.catch);
-    // TODO: persist caught/favorites if desired
+    
   });
 }
 
@@ -259,7 +257,7 @@ if (searchInput) {
 
 
 pokemonRepository.loadList().then(() => {
-  // Preload details (sprite/types) for nicer grid
+  
   const loadPromises = pokemonRepository
     .getAll()
     .map((p) => pokemonRepository.loadDetails(p).catch(() => {}));
